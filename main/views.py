@@ -148,7 +148,7 @@ class CustomUserViewSet(UpdateModelMixin,
             otp = OTP.objects.create(user=user, otp_code=otp_code)
 
         otp.save()
-        # send_sms(request, otp_code, phone_number)
+        send_sms(request, otp_code, phone_number)
         print(otp_code)  # delete this
 
         if create:
